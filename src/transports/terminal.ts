@@ -17,7 +17,7 @@ export function TerminalTransport(level?: LogLevel | LogLevel[]): Transport {
     id: "terminal",
 
     write(entry: LogEntry) {
-      if (!levels.includes(entry.level)) {
+      if (level !== undefined && !levels.includes(entry.level)) {
         return;
       }
 

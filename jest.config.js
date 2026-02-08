@@ -5,4 +5,6 @@ export default {
   moduleNameMapper: {
     "^~/(.*)$": "<rootDir>/src/$1",
   },
+  testMatch: ["<rootDir>/tests/**/*.test.ts"],
+  collectCoverageFrom: ["src/**/*.ts", "!src/**/index.ts"],
 };
