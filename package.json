@@ -18,10 +18,10 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch",
     "check": "biome check",
     "check:fix": "biome check --write",
     "clean": "git clean -xdf node_modules dist",
+    "dev": "tsup --watch",
     "format": "biome format",
     "format:fix": "biome format --write",
     "lint": "biome lint",
@@ -29,7 +29,9 @@
     "prepare": "husky",
     "prepublishOnly": "npm test",
     "pretest": "npm run build",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:e2e": "jest tests/e2e",
+    "test:unit": "jest tests/unit --coverage"
   },
   "sideEffects": false,
   "exports": {
