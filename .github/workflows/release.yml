@@ -35,6 +35,9 @@ jobs:
       - name: Verify signatures
         run: npm audit signatures
 
+      - name: Prepare npm for OIDC
+        run: echo "//registry.npmjs.org/:webauthn=true" > .npmrc
+
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v6
         env:
