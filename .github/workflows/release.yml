@@ -36,8 +36,6 @@ jobs:
         run: npm audit signatures
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v6
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          extends: "@jedmao/semantic-release-npm-github-config"
