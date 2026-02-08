@@ -36,6 +36,25 @@ jobs:
         run: npm audit signatures
 
       - name: Semantic Release
-        run: npx semantic-release
+        uses: cycjimmy/semantic-release-action@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          extends: "@jedmao/semantic-release-npm-github-config"
+          extra_plugins: |
+            [
+              "@semantic-release/changelog",
+              "@semantic-release/release-notes-generator",
+              [
+                "@continuous-auth/semantic-release-npm",
+                {
+                  "npmPublish": false
+                }
+              ],
+              [
+                "@semantic-release/github",
+                {
+                  "assets": "dist/*.tgz"
+                }
+              ]
+            ]
