@@ -77,10 +77,8 @@
   "homepage": "https://github.com/vladstsk/darpo-logger#readme",
   "release": {
     "plugins": [
-      "@semantic-release/changelog",
-      "@semantic-release/release-notes-generator",
       [
-        "@continuous-auth/semantic-release-npm",
+        "@semantic-release/npm",
         {
           "npmPublish": false
         }
